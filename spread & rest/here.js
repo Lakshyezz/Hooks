@@ -52,8 +52,10 @@ let object = {
      }                          // and now weight is overriden by new value
      
 
-
-console.log(newObject);
+     const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+     const citrus = fruits.slice(2,4);
+     console.log(citrus);
+// console.log(newObject);
 
 // arguments (output): 
 // [Arguments] {

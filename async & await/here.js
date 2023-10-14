@@ -12,7 +12,7 @@ const datas = [
         name: "Lakshay",
         age: 22
     }
-]
+] 
 
 function getDatas() {
     setTimeout(() => {
