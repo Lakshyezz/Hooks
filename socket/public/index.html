@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <p>YES SIR</p>
+    <div id="messages"></div>
+    <button id="btn" >Press Me</button>
+    <input type="text" id="message" placeholder="Type message"/>
+    <script>
+        const socket =  io()
+        const message = document.getElementById('message');
+        const btn = document.getElementById('btn');
+        const messageDiv = document.getElementById('messages');
+        const p = document.createElement('p');
+        btn.addEventListener('click' , (e) =>{
+            socket.emit('message', message.value);
+            socket.on('message' , (value) =>{
+                console.log(value);
+                
+                p.innerHTML = value;
+                messageDiv.appendChild(p)
+            })
+        });
+    </script>
+</body>
+</html>
